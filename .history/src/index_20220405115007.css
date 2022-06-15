@@ -6,7 +6,7 @@
 body{
   background-color: #22254b;
   color: white;
-  font-family: "Poppins", sans-serif;
+  font-family: "Pooppins", sans-serif;
   margin: 0;
 }
 .root{
@@ -33,7 +33,6 @@ header{
 }
 .movie-container{
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
 }
 .movie{
@@ -46,7 +45,6 @@ header{
   position: relative;
 }
 .movie img{
-  object-fit:cover;
   max-width: 100%;
 }
 .movie-info{
@@ -83,12 +81,12 @@ header{
   font-weight: bold;
   padding: 0.5rem;
 }
-.tag.green{
+.tag .green{
   color: green;
 }
-.tag.orange {
+.tag .orange {
   color: orange;
 }
-.tag.red{
+.tag .red{
   color: red
 }

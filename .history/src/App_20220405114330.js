@@ -8,22 +8,24 @@ const SEARCH_API =
 function App() {
   const [movies, setMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  useEffect(() => {
-    getMovie(FEATURED_API);
-  }, []);
+  useEffect(() => {}, []);
   const getMovie = (API) => {
-    fetch(API)
+    fetch(FEATURED_API)
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         setMovies(data.results);
       });
   };
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    if (searchTerm) {
-      getMovie(SEARCH_API + searchTerm);
-      setSearchTerm("");
-    }
+    fetch(SEARCH_API + searchTerm)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setMovies(data.results);
+      });
+    console.log(SEARCH_API + searchTerm);
   };
   const handleOnChange = (e) => {
     setSearchTerm(e.target.value);

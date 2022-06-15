@@ -15,6 +15,7 @@ function App() {
     fetch(API)
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         setMovies(data.results);
       });
   };
@@ -24,6 +25,7 @@ function App() {
       getMovie(SEARCH_API + searchTerm);
       setSearchTerm("");
     }
+    console.log(SEARCH_API + searchTerm);
   };
   const handleOnChange = (e) => {
     setSearchTerm(e.target.value);
